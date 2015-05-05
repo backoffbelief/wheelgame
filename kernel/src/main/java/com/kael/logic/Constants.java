@@ -12,6 +12,7 @@ public interface Constants {
 	short SERVER_START_RESP = 201;
 	short SERVER_IN_PAIRING_ROOM = 202;
 	short SERVER_ASK_ACT = 203;
+	short ROOM_RESULT = 204;
 	//=================
 	
 	int total_num = 3;

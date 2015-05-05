@@ -34,3 +34,8 @@ message PlayerActShowProto{
 message AskNextPlayerActProto{
   optional int32 index = 1;
 }
+
+message RoomResultProto{
+  optional int32 loseUserId = 1;
+  repeated PlayerProto pps = 2;
+}

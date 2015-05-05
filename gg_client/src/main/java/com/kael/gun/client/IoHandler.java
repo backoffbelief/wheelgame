@@ -7,6 +7,7 @@ import com.kael.req.RespProto.AskNextPlayerActProto;
 import com.kael.req.RespProto.LoginResultProto;
 import com.kael.req.RespProto.PairingResultProto;
 import com.kael.req.RespProto.PlayerProto;
+import com.kael.req.RespProto.RoomResultProto;
 import com.kael.req.RespProto.RoomStartResultProto;
 
 public class IoHandler extends SimpleChannelInboundHandler<IMessage> {
@@ -71,6 +72,11 @@ public class IoHandler extends SimpleChannelInboundHandler<IMessage> {
 		case Constants.SERVER_ASK_ACT:
 			AskNextPlayerActProto askNextPlayerActProto = AskNextPlayerActProto.parseFrom(msg.getBody());
 			client.print(askNextPlayerActProto);
+			break;
+		case Constants.ROOM_RESULT:
+			RoomResultProto roomResultProto = RoomResultProto.parseFrom(msg.getBody());
+			client.print(roomResultProto);
+			ctx.disconnect();
 			break;
 
 		default:

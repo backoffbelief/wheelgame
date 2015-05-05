@@ -3978,6 +3978,764 @@ public final class RespProto {
     // @@protoc_insertion_point(class_scope:AskNextPlayerActProto)
   }
 
+  public interface RoomResultProtoOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // optional int32 loseUserId = 1;
+    /**
+     * <code>optional int32 loseUserId = 1;</code>
+     */
+    boolean hasLoseUserId();
+    /**
+     * <code>optional int32 loseUserId = 1;</code>
+     */
+    int getLoseUserId();
+
+    // repeated .PlayerProto pps = 2;
+    /**
+     * <code>repeated .PlayerProto pps = 2;</code>
+     */
+    java.util.List<com.kael.req.RespProto.PlayerProto> 
+        getPpsList();
+    /**
+     * <code>repeated .PlayerProto pps = 2;</code>
+     */
+    com.kael.req.RespProto.PlayerProto getPps(int index);
+    /**
+     * <code>repeated .PlayerProto pps = 2;</code>
+     */
+    int getPpsCount();
+    /**
+     * <code>repeated .PlayerProto pps = 2;</code>
+     */
+    java.util.List<? extends com.kael.req.RespProto.PlayerProtoOrBuilder> 
+        getPpsOrBuilderList();
+    /**
+     * <code>repeated .PlayerProto pps = 2;</code>
+     */
+    com.kael.req.RespProto.PlayerProtoOrBuilder getPpsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code RoomResultProto}
+   */
+  public static final class RoomResultProto extends
+      com.google.protobuf.GeneratedMessage
+      implements RoomResultProtoOrBuilder {
+    // Use RoomResultProto.newBuilder() to construct.
+    private RoomResultProto(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private RoomResultProto(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final RoomResultProto defaultInstance;
+    public static RoomResultProto getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public RoomResultProto getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RoomResultProto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              loseUserId_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                pps_ = new java.util.ArrayList<com.kael.req.RespProto.PlayerProto>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              pps_.add(input.readMessage(com.kael.req.RespProto.PlayerProto.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          pps_ = java.util.Collections.unmodifiableList(pps_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.kael.req.RespProto.internal_static_RoomResultProto_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.kael.req.RespProto.internal_static_RoomResultProto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.kael.req.RespProto.RoomResultProto.class, com.kael.req.RespProto.RoomResultProto.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<RoomResultProto> PARSER =
+        new com.google.protobuf.AbstractParser<RoomResultProto>() {
+      public RoomResultProto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RoomResultProto(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoomResultProto> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional int32 loseUserId = 1;
+    public static final int LOSEUSERID_FIELD_NUMBER = 1;
+    private int loseUserId_;
+    /**
+     * <code>optional int32 loseUserId = 1;</code>
+     */
+    public boolean hasLoseUserId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 loseUserId = 1;</code>
+     */
+    public int getLoseUserId() {
+      return loseUserId_;
+    }
+
+    // repeated .PlayerProto pps = 2;
+    public static final int PPS_FIELD_NUMBER = 2;
+    private java.util.List<com.kael.req.RespProto.PlayerProto> pps_;
+    /**
+     * <code>repeated .PlayerProto pps = 2;</code>
+     */
+    public java.util.List<com.kael.req.RespProto.PlayerProto> getPpsList() {
+      return pps_;
+    }
+    /**
+     * <code>repeated .PlayerProto pps = 2;</code>
+     */
+    public java.util.List<? extends com.kael.req.RespProto.PlayerProtoOrBuilder> 
+        getPpsOrBuilderList() {
+      return pps_;
+    }
+    /**
+     * <code>repeated .PlayerProto pps = 2;</code>
+     */
+    public int getPpsCount() {
+      return pps_.size();
+    }
+    /**
+     * <code>repeated .PlayerProto pps = 2;</code>
+     */
+    public com.kael.req.RespProto.PlayerProto getPps(int index) {
+      return pps_.get(index);
+    }
+    /**
+     * <code>repeated .PlayerProto pps = 2;</code>
+     */
+    public com.kael.req.RespProto.PlayerProtoOrBuilder getPpsOrBuilder(
+        int index) {
+      return pps_.get(index);
+    }
+
+    private void initFields() {
+      loseUserId_ = 0;
+      pps_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, loseUserId_);
+      }
+      for (int i = 0; i < pps_.size(); i++) {
+        output.writeMessage(2, pps_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, loseUserId_);
+      }
+      for (int i = 0; i < pps_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, pps_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.kael.req.RespProto.RoomResultProto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.kael.req.RespProto.RoomResultProto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.kael.req.RespProto.RoomResultProto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.kael.req.RespProto.RoomResultProto parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.kael.req.RespProto.RoomResultProto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.kael.req.RespProto.RoomResultProto parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.kael.req.RespProto.RoomResultProto parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.kael.req.RespProto.RoomResultProto parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.kael.req.RespProto.RoomResultProto parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.kael.req.RespProto.RoomResultProto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.kael.req.RespProto.RoomResultProto prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code RoomResultProto}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.kael.req.RespProto.RoomResultProtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.kael.req.RespProto.internal_static_RoomResultProto_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.kael.req.RespProto.internal_static_RoomResultProto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.kael.req.RespProto.RoomResultProto.class, com.kael.req.RespProto.RoomResultProto.Builder.class);
+      }
+
+      // Construct using com.kael.req.RespProto.RoomResultProto.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getPpsFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        loseUserId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (ppsBuilder_ == null) {
+          pps_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ppsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.kael.req.RespProto.internal_static_RoomResultProto_descriptor;
+      }
+
+      public com.kael.req.RespProto.RoomResultProto getDefaultInstanceForType() {
+        return com.kael.req.RespProto.RoomResultProto.getDefaultInstance();
+      }
+
+      public com.kael.req.RespProto.RoomResultProto build() {
+        com.kael.req.RespProto.RoomResultProto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.kael.req.RespProto.RoomResultProto buildPartial() {
+        com.kael.req.RespProto.RoomResultProto result = new com.kael.req.RespProto.RoomResultProto(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.loseUserId_ = loseUserId_;
+        if (ppsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            pps_ = java.util.Collections.unmodifiableList(pps_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.pps_ = pps_;
+        } else {
+          result.pps_ = ppsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.kael.req.RespProto.RoomResultProto) {
+          return mergeFrom((com.kael.req.RespProto.RoomResultProto)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.kael.req.RespProto.RoomResultProto other) {
+        if (other == com.kael.req.RespProto.RoomResultProto.getDefaultInstance()) return this;
+        if (other.hasLoseUserId()) {
+          setLoseUserId(other.getLoseUserId());
+        }
+        if (ppsBuilder_ == null) {
+          if (!other.pps_.isEmpty()) {
+            if (pps_.isEmpty()) {
+              pps_ = other.pps_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensurePpsIsMutable();
+              pps_.addAll(other.pps_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.pps_.isEmpty()) {
+            if (ppsBuilder_.isEmpty()) {
+              ppsBuilder_.dispose();
+              ppsBuilder_ = null;
+              pps_ = other.pps_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              ppsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getPpsFieldBuilder() : null;
+            } else {
+              ppsBuilder_.addAllMessages(other.pps_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.kael.req.RespProto.RoomResultProto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.kael.req.RespProto.RoomResultProto) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // optional int32 loseUserId = 1;
+      private int loseUserId_ ;
+      /**
+       * <code>optional int32 loseUserId = 1;</code>
+       */
+      public boolean hasLoseUserId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int32 loseUserId = 1;</code>
+       */
+      public int getLoseUserId() {
+        return loseUserId_;
+      }
+      /**
+       * <code>optional int32 loseUserId = 1;</code>
+       */
+      public Builder setLoseUserId(int value) {
+        bitField0_ |= 0x00000001;
+        loseUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 loseUserId = 1;</code>
+       */
+      public Builder clearLoseUserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        loseUserId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // repeated .PlayerProto pps = 2;
+      private java.util.List<com.kael.req.RespProto.PlayerProto> pps_ =
+        java.util.Collections.emptyList();
+      private void ensurePpsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          pps_ = new java.util.ArrayList<com.kael.req.RespProto.PlayerProto>(pps_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.kael.req.RespProto.PlayerProto, com.kael.req.RespProto.PlayerProto.Builder, com.kael.req.RespProto.PlayerProtoOrBuilder> ppsBuilder_;
+
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public java.util.List<com.kael.req.RespProto.PlayerProto> getPpsList() {
+        if (ppsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(pps_);
+        } else {
+          return ppsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public int getPpsCount() {
+        if (ppsBuilder_ == null) {
+          return pps_.size();
+        } else {
+          return ppsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public com.kael.req.RespProto.PlayerProto getPps(int index) {
+        if (ppsBuilder_ == null) {
+          return pps_.get(index);
+        } else {
+          return ppsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public Builder setPps(
+          int index, com.kael.req.RespProto.PlayerProto value) {
+        if (ppsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePpsIsMutable();
+          pps_.set(index, value);
+          onChanged();
+        } else {
+          ppsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public Builder setPps(
+          int index, com.kael.req.RespProto.PlayerProto.Builder builderForValue) {
+        if (ppsBuilder_ == null) {
+          ensurePpsIsMutable();
+          pps_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          ppsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public Builder addPps(com.kael.req.RespProto.PlayerProto value) {
+        if (ppsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePpsIsMutable();
+          pps_.add(value);
+          onChanged();
+        } else {
+          ppsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public Builder addPps(
+          int index, com.kael.req.RespProto.PlayerProto value) {
+        if (ppsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePpsIsMutable();
+          pps_.add(index, value);
+          onChanged();
+        } else {
+          ppsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public Builder addPps(
+          com.kael.req.RespProto.PlayerProto.Builder builderForValue) {
+        if (ppsBuilder_ == null) {
+          ensurePpsIsMutable();
+          pps_.add(builderForValue.build());
+          onChanged();
+        } else {
+          ppsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public Builder addPps(
+          int index, com.kael.req.RespProto.PlayerProto.Builder builderForValue) {
+        if (ppsBuilder_ == null) {
+          ensurePpsIsMutable();
+          pps_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          ppsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public Builder addAllPps(
+          java.lang.Iterable<? extends com.kael.req.RespProto.PlayerProto> values) {
+        if (ppsBuilder_ == null) {
+          ensurePpsIsMutable();
+          super.addAll(values, pps_);
+          onChanged();
+        } else {
+          ppsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public Builder clearPps() {
+        if (ppsBuilder_ == null) {
+          pps_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          ppsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public Builder removePps(int index) {
+        if (ppsBuilder_ == null) {
+          ensurePpsIsMutable();
+          pps_.remove(index);
+          onChanged();
+        } else {
+          ppsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public com.kael.req.RespProto.PlayerProto.Builder getPpsBuilder(
+          int index) {
+        return getPpsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public com.kael.req.RespProto.PlayerProtoOrBuilder getPpsOrBuilder(
+          int index) {
+        if (ppsBuilder_ == null) {
+          return pps_.get(index);  } else {
+          return ppsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public java.util.List<? extends com.kael.req.RespProto.PlayerProtoOrBuilder> 
+           getPpsOrBuilderList() {
+        if (ppsBuilder_ != null) {
+          return ppsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(pps_);
+        }
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public com.kael.req.RespProto.PlayerProto.Builder addPpsBuilder() {
+        return getPpsFieldBuilder().addBuilder(
+            com.kael.req.RespProto.PlayerProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public com.kael.req.RespProto.PlayerProto.Builder addPpsBuilder(
+          int index) {
+        return getPpsFieldBuilder().addBuilder(
+            index, com.kael.req.RespProto.PlayerProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .PlayerProto pps = 2;</code>
+       */
+      public java.util.List<com.kael.req.RespProto.PlayerProto.Builder> 
+           getPpsBuilderList() {
+        return getPpsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.kael.req.RespProto.PlayerProto, com.kael.req.RespProto.PlayerProto.Builder, com.kael.req.RespProto.PlayerProtoOrBuilder> 
+          getPpsFieldBuilder() {
+        if (ppsBuilder_ == null) {
+          ppsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.kael.req.RespProto.PlayerProto, com.kael.req.RespProto.PlayerProto.Builder, com.kael.req.RespProto.PlayerProtoOrBuilder>(
+                  pps_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          pps_ = null;
+        }
+        return ppsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:RoomResultProto)
+    }
+
+    static {
+      defaultInstance = new RoomResultProto(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:RoomResultProto)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_LoginResultProto_descriptor;
   private static
@@ -4008,6 +4766,11 @@ public final class RespProto {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_AskNextPlayerActProto_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_RoomResultProto_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_RoomResultProto_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4027,8 +4790,9 @@ public final class RespProto {
       "(\005\"_\n\022PlayerActShowProto\022\014\n\004name\030\001 \001(\t\022\r" +
       "\n\005index\030\002 \001(\005\022\017\n\007counter\030\003 \001(\005\022\016\n\006userId" +
       "\030\004 \001(\005\022\013\n\003act\030\005 \001(\005\"&\n\025AskNextPlayerActP",
-      "roto\022\r\n\005index\030\001 \001(\005B\031\n\014com.kael.reqB\tRes" +
-      "pProto"
+      "roto\022\r\n\005index\030\001 \001(\005\"@\n\017RoomResultProto\022\022" +
+      "\n\nloseUserId\030\001 \001(\005\022\031\n\003pps\030\002 \003(\0132\014.Player" +
+      "ProtoB\031\n\014com.kael.reqB\tRespProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -4071,6 +4835,12 @@ public final class RespProto {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AskNextPlayerActProto_descriptor,
               new java.lang.String[] { "Index", });
+          internal_static_RoomResultProto_descriptor =
+            getDescriptor().getMessageTypes().get(6);
+          internal_static_RoomResultProto_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_RoomResultProto_descriptor,
+              new java.lang.String[] { "LoseUserId", "Pps", });
           return null;
         }
       };

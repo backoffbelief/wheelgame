@@ -15,6 +15,7 @@ import com.kael.kernel.IMessage;
 import com.kael.kernel.PlayerContext;
 import com.kael.req.RespProto.AskNextPlayerActProto;
 import com.kael.req.RespProto.PairingResultProto;
+import com.kael.req.RespProto.RoomResultProto;
 import com.kael.req.RespProto.RoomStartResultProto;
 import com.kael.server.JRedis;
 
@@ -171,15 +172,24 @@ public class AppRoom {
 		this.casStatus(RoomStatus.running, RoomStatus.exiting);
 		AppPlayer appPlayer = appPlayers.get(currentActIndexId);
 		int extra = counters.get(appPlayer.getUserId()) / (Constants.total_num - 1);
+		RoomResultProto.Builder builder = RoomResultProto.newBuilder();
+		builder.setLoseUserId(appPlayer.getUserId());
+		int index = appPlayers.firstKey();
 		for (Iterator<AppPlayer> iterator = appPlayers.values().iterator(); iterator.hasNext();) {
 			AppPlayer ap = iterator.next();
-			
 			if(ap != null && ap.getUserId() != appPlayer.getUserId()){
 				ap.incrCounter(extra + counters.get(ap.getUserId()));
 			}
-			JRedis.getInstance().set(("entity_gamePlayer_"+ap.getUserId()).getBytes(), appPlayer.copyTo());
+			JRedis.getInstance().set(("entity_gamePlayer_"+ap.getUserId()).getBytes(), ap.copyTo());
 			ap.exit();
+			builder.addPps(ap.toBuilder(index++));
 //			iterator.remove();
+		}
+		for (Iterator<AppPlayer> iterator = appPlayers.values().iterator(); iterator.hasNext();) {
+			AppPlayer ap = iterator.next();
+			ap.changeStatus(PlayerStatus.playInRoom, null);
+			ap.write(IMessage.create().withBody(builder).withCode(Constants.ROOM_RESULT));
+			iterator.remove();
 		}
 		PlayerContext.getInstance().remove(this);
 	}
